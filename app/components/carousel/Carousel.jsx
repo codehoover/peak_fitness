@@ -5,15 +5,18 @@ export default function Carousel(){
     const [num, setNum] = useState(0);
     
     const [items, setItems] = useState([
-        <CarouselItem 
+        <CarouselItem
+        key={1} 
         title={'Customizable Plans'}
         details={'Tailored workouts and nutrition advice based on your goals.'}
         description={"Import your own routine or get us to create one for you! Whether you're looking to switch over or start your fitness journey we are here to support you!"}/>,
         <CarouselItem
+        key={2} 
         title={"Communication hub"}
         details={'Keep all of your work and clients on one platform'}
         description={"Centralize your coaching on one platform for seamless client interactions and enhanced relationships."}/>,
         <CarouselItem
+        key={3} 
         title={"Real time tracking"}
         details={"See your progress in real time"}
         description={"Montior your progress from workout to workout to ensure you are meeting your goals!"}/>
