@@ -1,6 +1,6 @@
 export default function CarouselItem({title, details, description}){
     return(
-        <div className="flex flex-col gap-16 transition ease-in-out">
+        <div className="flex flex-col gap-16">
             <section className="flex flex-col items-center gap-2">
                 <h1 className="text-3xl"> {title} </h1>
                 <p className="text-xs text-center text-neutral-300"> {details} </p>

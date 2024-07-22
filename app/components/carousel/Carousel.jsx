@@ -25,7 +25,8 @@ export default function Carousel(){
 
     return( 
         <div className="grid grid-rows-1 items-center h-full">
-            <section >
+            <section
+            className="transition-opacity ease-in-out">
                 {items[num]}
             </section>
 
