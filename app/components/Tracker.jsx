@@ -7,16 +7,19 @@ import { DoubleArrowLeftIcon, ThickArrowLeftIcon } from "@radix-ui/react-icons";
 export default function Tracker(){
     const [currentWeight, setCurrentWeight] = useState(0);
     const [goalWeight, setGoalWeight] = useState(0);
+    const [metric, setMetric] = useState('lbs')
     const [isActive, setIsActive] = useState(false)
     const [num, setNum] = useState(0);
 
     const handlePounds = () =>{
         setCurrentWeight(currentWeight * 2.205)
         setIsActive(!isActive)
+        setMetric('lbs')
     }
     const handleKilo = () => {
         setCurrentWeight(currentWeight / 2.205)
         setIsActive(!isActive)
+        setMetric('kgs')
     }
 
     const initScreen = () =>{
@@ -61,7 +64,7 @@ export default function Tracker(){
                 
                 <input
                 className="flex flex-row bg-transparent text-center text-5xl outline-none w-full" 
-                value={goalWeight}
+                value={Number(goalWeight)}
                 onChange={e => setGoalWeight(e.target.value)}/>
     
             </div>
@@ -85,17 +88,17 @@ export default function Tracker(){
 
                     <section className="grid grid-cols-3 gap-2">
                         <div className=" flex flex-col items-center bg-orange-500 px-6 py-4 max-w-48 rounded-sm text-2xl">
-                            {currentWeight}
+                            {currentWeight + metric}
                             <p className="text-sm"> Current </p>
                         </div>
 
                         <div className=" flex flex-col items-center bg-orange-500 px-6 py-4 rounded-sm text-2xl">
-                            {goalWeight}
+                            {goalWeight + metric}
                             <p className="text-sm"> Goal </p>
                         </div>
 
                         <div className=" flex flex-col items-center bg-orange-500 px-6 py-4 rounded-sm text-2xl">
-                            {Math.abs(Number(currentWeight-goalWeight))}
+                            {Math.abs(Number(currentWeight-goalWeight)) + metric}
                             <p className="text-sm"> Left </p>
                         </div>
                     </section>
