@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="bg-neutral-800 h-screen pt-20 pl-6 pb-6">
-      <div className="flex flex-col justify-between h-full">
+      <section className="flex flex-col justify-between h-full">
         <Link
           className="text-white flex flex-row gap-10 items-center rounded-xl p-2 hover:bg-black duration-300 w-1/12"
           href="/contact"
@@ -24,12 +24,15 @@ export default function Home() {
             <QuestionMarkCircledIcon className="z-10" width={40} height={40} />
           </div>
 
-          <p className="font-light min-w-20 max-w-20"> Have a question?</p>
+          <p className="font-light min-w-20 max-w-20 leading-none">
+            Have a question?
+          </p>
         </Link>
 
         <section className="flex flex-col text-white gap-6 ">
           <h1 className="text-6xl w-2/6">
-            Unlock your potential, reach your Peak
+            Unlock your potential, reach your
+            <span className="text-orange-500"> Peak </span>
           </h1>
           <p className="w-2/6 font-light">
             Welcome to your health and wellness journey. Peak is a free to use
@@ -46,7 +49,7 @@ export default function Home() {
             <ArrowRightIcon width={20} height={20} />
           </Link>
         </section>
-      </div>
+      </section>
 
       <section></section>
     </main>
