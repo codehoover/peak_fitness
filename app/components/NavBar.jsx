@@ -4,7 +4,7 @@ import Peak_img from '../assets/peak_lm.png'
 
 export default function NavBar(){
     return(
-        <div className='flex flex-row justify-between px-4 bg-neutral-800 w-full fixed'>
+        <div className='flex flex-row justify-between px-4 bg-transparent w-full fixed'>
             <section className='flex flex-row text-orange-500 items-center'>
                 <Image src={Peak_img} width={65} height={65} alt='Peak fitness logo' priority/>
                 <h1 className='text-sm font-bold'> Peak Fitness </h1>
