@@ -30,11 +30,11 @@ export default function Home() {
         </Link>
 
         <section className="flex flex-col text-white gap-6 ">
-          <h1 className="text-6xl w-2/6">
+          <h1 className="text-4xl sm:text-6xl w-3/6 sm:w-2/6">
             Unlock your potential, reach your
             <span className="text-orange-500"> Peak </span>
           </h1>
-          <p className="w-2/6 font-light">
+          <p className="sm:w-2/6 font-light">
             Welcome to your health and wellness journey. Peak is a free to use
             platform made to help you reach your goals. Build and track
             workouts, keep intouch with your friends fitness journey's and track
