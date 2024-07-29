@@ -41,8 +41,8 @@ export default function Tracker() {
 					onClick={() => handlePounds()}
 					disabled={!isActive}
 				>
-					{' '}
-					LB{' '}
+					
+					LB
 				</button>
 				<button
 					className={`flex items-center justify-center bg-black text-white p-2 rounded-r-lg w-28 ${
@@ -51,8 +51,8 @@ export default function Tracker() {
 					onClick={() => handleKilo()}
 					disabled={isActive}
 				>
-					{' '}
-					KG{' '}
+					
+					KG
 				</button>
 			</section>
 		</div>

@@ -5,26 +5,27 @@ import Image from 'next/image';
 import Peak_img from '../assets/peak_lm.png'
 import { useState } from 'react';
 
-export default function NavBar(){
+export default function NavBar(args){
     const [isActive, setIsActive] = useState(0)
     return(
         <div className='flex flex-row justify-between px-4 bg-transparent w-full fixed'>
             <Link className='flex flex-row text-orange-500 items-center '
-            href='/'>
+            href='/'
+            onClick={()=>setIsActive(0)}>
                 <Image src={Peak_img} width={65} height={65} alt='Peak fitness logo' priority/>
                 <h1 className='text-2xl font-light'> Peak Fitness </h1>
             </Link>
 
             <section className='grid grid-cols-3 gap-4 place-items-center text-orange-500 font-semibold'>
-                <Link className={isActive == 0 ? "border-b-2 border-orange-500 duration-150": "hover:-translate-y-0.5 hover:font-normal duration-300 font-light"}
+                <Link className={isActive == 0 ? "border-b-2 border-orange-500 duration-150": "hover:-translate-y-0.5 hover:font-normal duration-300 font-light border-none"}
                 href='/'
                 onClick={()=> setIsActive(0)}> Home </Link>
                 
-                <Link className={isActive == 1 ? "border-b-2 border-orange-500 duration-150": "hover:-translate-y-0.5 hover:font-normal duration-300 font-light"}
+                <Link className={isActive == 1 ? "border-b-2 border-orange-500 duration-150": "hover:-translate-y-0.5 hover:font-normal duration-300 font-light border-none"}
                 href="/about"
                 onClick={()=> setIsActive(1)}> About </Link>
 
-                <Link className={isActive == 2 ? "border-b-2 border-orange-500 duration-150": "hover:-translate-y-0.5 hover:font-normal duration-300 font-light"}
+                <Link className={isActive == 2 ? "border-b-2 border-orange-500 duration-150": "hover:-translate-y-0.5 hover:font-normal duration-300 font-light border-none"}
                 href='/contact'
                 onClick={()=> setIsActive(2)}> Contact </Link>
             </section>

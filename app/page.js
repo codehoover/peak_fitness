@@ -1,11 +1,17 @@
+"use client";
 //should have a toggle for coach vs client information
+import NavBar from "./components/NavBar";
 import {
   ArrowRightIcon,
   ArrowTopRightIcon,
   QuestionMarkCircledIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { useState } from "react";
+
 export default function Home() {
+  const [tab, setTab] = useState(0);
+
   return (
     <main className="bg-neutral-800 h-screen pt-20 pl-6 pb-6">
       <section className="flex flex-col justify-between h-full">
@@ -30,15 +36,16 @@ export default function Home() {
         </Link>
 
         <section className="flex flex-col text-white gap-6 ">
-          <h1 className="text-4xl sm:text-6xl w-3/6 sm:w-2/6">
+          <h1 className="text-5xl sm:text-6xl w-5/6 sm:w-2/6">
             Unlock your potential, reach your
             <span className="text-orange-500"> Peak </span>
           </h1>
-          <p className="sm:w-2/6 font-light">
-            Welcome to your health and wellness journey. Peak is a free to use
-            platform made to help you reach your goals. Build and track
-            workouts, keep intouch with your friends fitness journey's and track
-            real time progress!
+          <p className="w-5/6 sm:w-2/6 font-light">
+            Welcome to your health and wellness journey.
+            <span className="text-orange-400"> Peak </span>
+            is a free to use platform made to help you reach your goals. Build
+            and track workouts, keep intouch with your friends fitness journey's
+            and track real time progress!
           </p>
 
           <Link
