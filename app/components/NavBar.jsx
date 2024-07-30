@@ -1,5 +1,5 @@
 'use client';
-import {  useState } from 'react';
+
 import { useRouter,usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -7,12 +7,12 @@ import Peak_img from '../assets/peak_lm.png'
 
 export default function NavBar(){
     const router = useRouter();
-    
+
     //reads current urls pathname
     const pathname = usePathname();
 
     return(
-        <nav className={'flex flex-row justify-between px-4 bg-transparent w-full fixed z-50'}>
+        <nav className={pathname != '/' ? 'flex flex-row justify-between px-4 bg-neutral-800 border-b border-neutral-700 w-full fixed z-50':'flex flex-row justify-between px-4 bg-transparent w-full fixed z-50'}>
             <Link className='flex flex-row text-orange-500 items-center '
             href='/'
             onClick={()=>setIsActive(0)}>
