@@ -1,11 +1,13 @@
+import { RocketIcon, StarIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 export default function About(){
     return(
         <div className="flex flex-col sm:px-6 pt-48 pb-60 gap-12 h-full bg-neutral-800 text-white">
             <section className="flex flex-col items-start gap-12 w-5/6">
-                <h1 className="text-5xl font-bold text-orange-500"> 
-                    Everthing you need to achieve your goals 
+                <h1 className="flex flex-row items-center gap-2 text-5xl font-bold text-orange-500"> 
+                    Everthing you need to achieve your goals
+                    <RocketIcon width={40} height={40}/> 
                 </h1>
 
                 <p className="font-semibold w-3/6"> 
@@ -21,18 +23,20 @@ export default function About(){
             </section>
 
             <section className="flex flex-col items-center justify-center text-orange-500 gap-10">
-                <h1 className="text-5xl font-bold"> Key Features </h1>
+                <h1 className="flex flex-row gap-2 items-center text-5xl font-bold"> 
+                    Key Features <StarIcon width={40} height={40}/> 
+                </h1>
 
                 <section className="flex flex-row gap-6">
-                    <div className="flex flex-col w-48 h-48 p-2 border-orange-500 border rounded-md hover:scale-105 duration-300">
+                    <div className="flex flex-col w-48 h-48 p-2 border-orange-500 border rounded-md hover:scale-105 hover:font-semibold duration-300 ">
                         <p> Routine Builder </p>
                         <p className="text-xs"> Tailored workouts and nutrition plans based on your goals </p>
                     </div>
-                    <div className="w-48 h-48 p-2 border-orange-500 border rounded-md hover:scale-105 duration-300">
+                    <div className="w-48 h-48 p-2 border-orange-500 border rounded-md hover:scale-105 hover:font-semibold duration-300">
                         <p> Communication hub </p>
                         <p className="text-xs"> Be able to communicate with friends or clients. </p>
                     </div>
-                    <div className="w-48 h-48 p-2 border-orange-500 border rounded-md hover:scale-105 duration-300">
+                    <div className="w-48 h-48 p-2 border-orange-500 border rounded-md hover:scale-105 hover:font-semibold duration-300">
                         <p> Real-time tracking </p>
                         <p className="text-xs"> Monitor your progress from workout to workout. </p>
                     </div>

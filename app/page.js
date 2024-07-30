@@ -1,22 +1,26 @@
-"use client";
 //should have a toggle for coach vs client information
-import NavBar from "./components/NavBar";
+
 import {
   ArrowRightIcon,
   ArrowTopRightIcon,
   QuestionMarkCircledIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Home() {
-  const [tab, setTab] = useState(0);
-
   return (
-    <main className="bg-neutral-800 h-screen pt-20 pl-6 pb-6">
-      <section className="flex flex-col justify-between h-full">
+    <main className="bg-neutral-800 h-screen overflow-hidden">
+      <video
+        className="fixed z-0 overflow-hidden opacity-90 rounded-md"
+        src={"/Beach_running.mp4"}
+        loop
+        autoPlay
+        muted
+      ></video>
+
+      <div className="flex flex-col pt-20 pl-6 pb-6 justify-between h-full">
         <Link
-          className="text-white flex flex-row gap-10 items-center rounded-xl p-2 hover:bg-black duration-300 w-1/12"
+          className="text-white flex flex-row gap-10 items-center rounded-xl p-2 hover:bg-black duration-300 w-1/12 z-10"
           href="/contact"
         >
           <div className=" grid grid-cols-2 max-w-4">
@@ -35,7 +39,7 @@ export default function Home() {
           </p>
         </Link>
 
-        <section className="flex flex-col text-white gap-6 ">
+        <section className="flex flex-col text-white gap-6 z-10 ">
           <h1 className="text-5xl sm:text-6xl w-5/6 sm:w-2/6">
             Unlock your potential, reach your
             <span className="text-orange-500"> Peak </span>
@@ -56,9 +60,7 @@ export default function Home() {
             <ArrowRightIcon width={20} height={20} />
           </Link>
         </section>
-      </section>
-
-      <section></section>
+      </div>
     </main>
   );
 }
