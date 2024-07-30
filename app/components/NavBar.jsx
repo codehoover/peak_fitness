@@ -8,7 +8,7 @@ import { useState } from 'react';
 export default function NavBar(args){
     const [isActive, setIsActive] = useState(0)
     return(
-        <div className={'flex flex-row justify-between px-4 bg-transparent w-full fixed z-50'}>
+        <nav className={'flex flex-row justify-between px-4 bg-transparent w-full fixed z-50'}>
             <Link className='flex flex-row text-orange-500 items-center '
             href='/'
             onClick={()=>setIsActive(0)}>
@@ -46,6 +46,6 @@ export default function NavBar(args){
             </section>
 
 
-        </div>
+        </nav>
     )
 }

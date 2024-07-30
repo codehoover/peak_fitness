@@ -36,15 +36,25 @@ export default function Contact(){
 
                         <section className="flex flex-col justify-center gap-2">
                             <button 
-                            className="flex flex-row gap-2 text-sm w-full p-2 text-left border border-neutral-500 rounded-md hover:border-orange-500 focus:border-orange-500 duration-300">
+                            className="flex flex-row gap-2 items-center text-sm w-full p-2 text-left border border-neutral-500 rounded-md hover:border-orange-500 focus:border-orange-500 duration-300"
+                            type="button">
                                 <ClipboardIcon width={30} height={30}/>
-                                I am a Coach 
+                                
+                                <section>
+                                I am a Coach
+                                <p className="text-neutral-300 text-xs"> I use the platform for coaching </p> 
+                                </section>
+
                             </button>
 
                             <button 
-                            className="flex flex-row gap-2 text-sm w-full p-2 text-left border border-neutral-500 rounded-md hover:border-orange-500 focus:border-orange-500 duration-300">
+                            className="flex flex-row gap-2 text-sm w-full p-2 text-left border border-neutral-500 rounded-md hover:border-orange-500 focus:border-orange-500 duration-300"
+                            type="button">
                                 <PersonIcon width={30} height={30}/>
+                                <section>
                                 I am a User/Client
+                                <p className="text-neutral-300 text-xs"> I use the platform for personally/with a coach. </p> 
+                                </section>
                             </button>
                         </section>
 

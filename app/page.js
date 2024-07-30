@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="bg-neutral-800 h-screen overflow-hidden">
       <video
-        className="fixed z-0 overflow-hidden opacity-90 rounded-md"
+        className="fixed z-0 overflow-hidden opacity-90 rounded-md hidden sm:block"
         src={"/Beach_running.mp4"}
         loop
         autoPlay
@@ -42,11 +42,11 @@ export default function Home() {
         <section className="flex flex-col text-white gap-6 z-10 ">
           <h1 className="text-5xl sm:text-6xl w-5/6 sm:w-2/6">
             Unlock your potential, reach your
-            <span className="text-orange-500"> Peak </span>
+            <span className="text-orange-500 "> Peak </span>
           </h1>
           <p className="w-5/6 sm:w-2/6 font-light">
             Welcome to your health and wellness journey.
-            <span className="text-orange-400"> Peak </span>
+            <span className="text-orange-500 font-bold"> Peak </span>
             is a free to use platform made to help you reach your goals. Build
             and track workouts, keep intouch with your friends fitness journey's
             and track real time progress!
