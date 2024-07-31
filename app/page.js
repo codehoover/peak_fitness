@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="bg-neutral-800 h-screen overflow-hidden">
       <video
-        className="fixed z-0 overflow-hidden opacity-90 rounded-md hidden sm:block"
+        className="fixed z-0 overflow-hidden opacity-90 rounded-md object-cover sm:block  h-screen w-screen"
         src={"/Beach_running.mp4"}
         loop
         autoPlay
