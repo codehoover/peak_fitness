@@ -73,34 +73,34 @@ export default function NavBar(){
                                     '-rotate-45 -translate-y-1' : 'translate-y-0.5'
                                     }`} >
                     </span>    
-                    <nav className={isOpen ? 'flex flex-col items-start gap-2 w-52 h-48 px-6 pt-4 rounded-md opacity-100 absolute right-2 top-2 bg-white text-orange-500 transition-all duration-300 ease-out z-40': 'transition-all opacity-0 duration-300 ease-out z-40 hidden'}>
+                    <nav className={isOpen ? 'flex flex-col items-start gap-2 w-52 h-48 px-6 pt-4 rounded-md opacity-100 absolute right-2 top-2 bg-black text-orange-500 font-semibold transition-all duration-300 ease-out z-40': 'transition-all opacity-0 duration-300 ease-out z-40 hidden'}>
                         <Link href={'/'} 
                         onClick={() => router.push('/')}
-                        className={"text-orange-500 duration-300 font-light border-none z-50"}>
+                        className={"duration-300 border-none z-50"}>
                             Home
                         </Link>
 
                         <Link href={'/about'} 
                         onClick={() => router.push('/about')}
-                        className={"text-orange-500 duration-300 font-light border-none z-50"}>
+                        className={"duration-300 border-none z-50"}>
                             About
                         </Link>
 
                         <Link href={'/contact'} 
                         onClick={() => router.push('/contact')}
-                        className={"text-orange-500 duration-300 font-light border-none z-50"}>
+                        className={"duration-300 border-none z-50"}>
                             Contact
                         </Link>
 
                         <Link href={'/login'} 
                         onClick={() => router.push('/login')}
-                        className={"text-orange-500 duration-300 font-light border-none z-50"}>
+                        className={" duration-300 border-none z-50"}>
                             Login
                         </Link>
 
                         <Link href={'/register'} 
                         onClick={() => router.push('/register')}
-                        className={"text-orange-500 duration-300 font-light border-none z-50"}>
+                        className={"duration-300 border-none z-50"}>
                             Sign Up
                         </Link>
 

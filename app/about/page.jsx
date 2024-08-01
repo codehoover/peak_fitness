@@ -6,7 +6,7 @@ export default function About(){
         <div className="flex flex-col pt-28 pb-60 gap-12 h-full bg-neutral-800 text-white">
             <section className="flex flex-col items-center text-center">
                 <h1 className="text-5xl font-medium"> About </h1>
-                <p className="text-gray-300"> 
+                <p className="text-gray-300 p-2"> 
                 We aim to make reaching your goals more attaintable. 
                 </p>
             </section>
