@@ -12,14 +12,21 @@ export default function Tracker() {
 	const [num, setNum] = useState(0);
 
 	const handlePounds = () => {
-		setCurrentWeight(currentWeight * 2.205);
+		setCurrentWeight((currentWeight * 2.205).toFixed(2));
 		setIsActive(!isActive);
 		setMetric('lbs');
 	};
 	const handleKilo = () => {
-		setCurrentWeight(currentWeight / 2.205);
+		setCurrentWeight((currentWeight / 2.205).toFixed(2));
 		setIsActive(!isActive);
 		setMetric('kgs');
+	};
+
+	const checkInputForNumbers = (e) => {
+		const userInput = e.target.value;
+		const onlyDigits = userInput.replace(/^0+|[^\d]/g, '');
+
+		if (userInput !== onlyDigits) e.target.value = onlyDigits;
 	};
 
 	const initScreen = (
@@ -30,6 +37,7 @@ export default function Tracker() {
 					className='flex flex-row bg-transparent text-center text-5xl outline-none w-full'
 					value={Number(currentWeight)}
 					onChange={(e) => setCurrentWeight(e.target.value)}
+					onInput={checkInputForNumbers}
 				/>
 			</section>
 
@@ -41,7 +49,6 @@ export default function Tracker() {
 					onClick={() => handlePounds()}
 					disabled={!isActive}
 				>
-					
 					LB
 				</button>
 				<button
@@ -51,7 +58,6 @@ export default function Tracker() {
 					onClick={() => handleKilo()}
 					disabled={isActive}
 				>
-					
 					KG
 				</button>
 			</section>
@@ -71,7 +77,8 @@ export default function Tracker() {
 			<input
 				className='flex flex-row bg-transparent text-center text-5xl outline-none w-full'
 				value={Number(goalWeight)}
-				onChange={(e) => setGoalWeight(e.target.value)}
+				onChange={(e) => setGoalWeight(Number(e.target.value).toFixed(2))}
+				onInput={checkInputForNumbers}
 			/>
 		</div>
 	);
