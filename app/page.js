@@ -1,5 +1,5 @@
 //should have a toggle for coach vs client information
-
+import Onboarding from "./components/onBoarding";
 import {
   ArrowRightIcon,
   ArrowTopRightIcon,
@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="bg-neutral-800 h-screen overflow-hidden">
+    <main className="bg-neutral-800 h-screen justify-center items-center overflow-hidden">
       <video
         className="fixed z-0 overflow-hidden opacity-90 rounded-md object-cover sm:block  h-screen w-screen"
         src={"/Beach_running.mp4"}
@@ -20,7 +20,7 @@ export default function Home() {
 
       <div className="flex flex-col pt-20 pl-6 pb-6 justify-between h-full">
         <Link
-          className="text-white flex flex-row gap-10 items-center rounded-xl p-2 hover:bg-black duration-300 w-1/12 z-10"
+          className="text-white flex flex-row gap-10 items-center rounded-xl p-2 hover:bg-black duration-300 w-1/12 min-w-36 z-10"
           href="/contact"
         >
           <div className=" grid grid-cols-2 max-w-4">
@@ -29,6 +29,7 @@ export default function Home() {
               color="black"
               width={20}
               height={20}
+              hey
             />
 
             <QuestionMarkCircledIcon className="z-10" width={40} height={40} />
@@ -61,6 +62,7 @@ export default function Home() {
           </Link>
         </section>
       </div>
+      {/* <Onboarding /> */}
     </main>
   );
 }

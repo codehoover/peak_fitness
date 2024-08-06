@@ -1,23 +1,47 @@
 'use client';
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS } from 'chart.js';
+import { Chart as ChartJS,
+	CategoryScale, 
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend,
+	Filler,
+	scales,
+	plugins,
+ } from 'chart.js';
 import { useState } from 'react';
-import { DoubleArrowLeftIcon, ThickArrowLeftIcon } from '@radix-ui/react-icons';
+import { DoubleArrowLeftIcon, PlusCircledIcon, ThickArrowLeftIcon } from '@radix-ui/react-icons';
+import { useRouter } from 'next/navigation';
 
-export default function Tracker() {
+ChartJS.register(CategoryScale, 
+	LinearScale,
+	PointElement,
+	LineElement,
+	Filler,
+	Title,
+	Tooltip,
+	Legend);
+
+export default function Onboarding() {
 	const [currentWeight, setCurrentWeight] = useState(0);
 	const [goalWeight, setGoalWeight] = useState(0);
 	const [metric, setMetric] = useState('lbs');
 	const [isActive, setIsActive] = useState(false);
 	const [num, setNum] = useState(0);
+	const router = useRouter();
 
 	const handlePounds = () => {
 		setCurrentWeight((currentWeight * 2.205).toFixed(2));
+		setGoalWeight((goalWeight * 2.205).toFixed(2))
 		setIsActive(!isActive);
 		setMetric('lbs');
 	};
 	const handleKilo = () => {
 		setCurrentWeight((currentWeight / 2.205).toFixed(2));
+		setGoalWeight((goalWeight / 2.205).toFixed(2));
 		setIsActive(!isActive);
 		setMetric('kgs');
 	};
@@ -28,6 +52,8 @@ export default function Tracker() {
 
 		if (userInput !== onlyDigits) e.target.value = onlyDigits;
 	};
+
+
 
 	const initScreen = (
 		<div>
@@ -77,9 +103,29 @@ export default function Tracker() {
 			<input
 				className='flex flex-row bg-transparent text-center text-5xl outline-none w-full'
 				value={Number(goalWeight)}
-				onChange={(e) => setGoalWeight(Number(e.target.value).toFixed(2))}
+				onChange={(e) => setGoalWeight(e.target.value)}
 				onInput={checkInputForNumbers}
 			/>
+			<section className='flex flex-row justify-center w-full p-2'>
+				<button
+					className={`flex items-center justify-center bg-black text-white p-2 rounded-l-lg w-28 ${
+						isActive ? '' : 'bg-orange-500 font-bold duration-300'
+					}`}
+					onClick={() => handlePounds()}
+					disabled={!isActive}
+				>
+					LB
+				</button>
+				<button
+					className={`flex items-center justify-center bg-black text-white p-2 rounded-r-lg w-28 ${
+						isActive ? 'bg-orange-500 font-bold duration-300' : ''
+					}`}
+					onClick={() => handleKilo()}
+					disabled={isActive}
+				>
+					KG
+				</button>
+			</section>			
 		</div>
 	);
 
@@ -115,15 +161,23 @@ export default function Tracker() {
 	const contentDisplay = [initScreen, targetWeight, auditScreen];
 
 	return (
-		<div className='flex flex-col gap-10 items-center bg-red-500 pb-10 w-full transition-h duration-300'>
+		<div className='flex flex-col gap-10 items-center bg-transparent pt-24 pb-10 w-full transition-h duration-300'>
 			{contentDisplay[num]}
 
+			{num>=2 ? 
 			<button
-				className='p-2 min-w-1/12 rounded-lg bg-black text-white hover:bg-neutral-900 hover:font-semibold duration-300'
-				onClick={() => setNum(num + 1)}
-			>
-				Continue
+			className='p-2 min-w-1/12 rounded-lg bg-black text-white hover:bg-neutral-900 hover:font-semibold duration-300'
+			onClick={()=>router.push('/dashboard')}>
+				Looks good!
 			</button>
+			:
+			<button
+			className='p-2 min-w-1/12 rounded-lg bg-black text-white hover:bg-neutral-900 hover:font-semibold duration-300'
+			onClick={() => setNum(num + 1)}>
+			Continue
+			</button> 
+			}
 		</div>
 	);
 }
+

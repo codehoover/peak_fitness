@@ -66,9 +66,10 @@ export default function About(){
             <section>
                 <div className="flex flex-col sm:items-center gap-2 p-6 sm:w-full">
                     <h1 className="text-4xl"> Start your journey to becoming a better you now!</h1>
-                    <p className="text-gray-300"> Peak is avaible on apples App store as well as 
+                    <p className="text-gray-300"> Peak is available on Apples App store as well as 
                         the Google play store
                     </p>
+                    <p className="text-xs"> Coming soon! </p>
                 </div>
 
             </section>

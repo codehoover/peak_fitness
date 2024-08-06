@@ -12,21 +12,23 @@ import {
     ClipboardIcon,
     FaceIcon} from "@radix-ui/react-icons";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import peakLogo from '../assets/peak_icon.png';
-import CarouselItem from "../components/carousel/CarouselItem";
 import Carousel from "../components/carousel/Carousel";
+import Link from "next/link";
 
 export default function Register(){
     const [toggle, setToggle] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const router = useRouter();
     const [password, setPassword] = useState();
     const [username, setUsername] = useState();
 
     return(
         <div className="flex flex-row items-center justify-center w-full h-screen bg-neutral-800 text-white ">
             
-            <div className="flex flex-col md:flex-row justify-between bg-orange-500 w-4/6 max-w-6xl h-4/6 mx-4 p-6 rounded-3xl ">
+            <div className="flex flex-col md:flex-row justify-between bg-orange-500 sm:w-4/6 max-w-6xl h-5/6 md:h-4/6 mx-4 p-6 rounded-3xl ">
             <section className=" flex flex-col items-center justify-between h-full md:w-1/3 ">
                         <Image src={peakLogo} width={60} height={60} alt="Peak fitness logo"/>
                         
@@ -135,7 +137,9 @@ export default function Register(){
 
                         <section className="flex flex-col gap-2 items-center text-xs w-full"> 
                             <p className="text-gray-100"> Already have an account? </p>
-                            <span className="flex flex-row w-full items-center justify-center gap-px font-semibold text-black"> <EnterIcon width={20} height={20}/> Log In </span>
+                            <Link href={'/login'} 
+                            onClick={()=> router.push('/login')}
+                            className="flex flex-row w-full items-center justify-center gap-px font-semibold text-black"> <EnterIcon width={20} height={20}/> Log In  </Link>
                              
                         </section>
         
