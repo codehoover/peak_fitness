@@ -4,4 +4,6 @@
 
 ## stack
 
-I'm using Nextjs, Tailwind css and radix icons for the front end
+NextJS
+Tailwind CSS
+Radix UI (icons + styled components)

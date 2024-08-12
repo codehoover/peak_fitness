@@ -1,4 +1,3 @@
-//should have a toggle for coach vs client information
 import Onboarding from "./components/onBoarding";
 import {
   ArrowRightIcon,
