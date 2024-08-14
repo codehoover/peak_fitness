@@ -16,6 +16,16 @@ import {
   plugins,
 } from "chart.js";
 import { PlusCircledIcon } from "@radix-ui/react-icons";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -28,6 +38,8 @@ ChartJS.register(
 );
 
 export default function Dashboard() {
+
+
   let sum = 0;
   const [mockData, setMockData] = useState([120, 121, 120, 122, 123, 121, 121]);
 
@@ -52,7 +64,7 @@ export default function Dashboard() {
         display: false,
         label: "Weight",
         borderColor: "rgb(249 115 22)",
-        backgroundColor: "rgb(0,0,0)",
+        backgroundColor: 'rgba(0,0,0,0.5)',
         pointRadius: 5,
       },
     ],
@@ -131,20 +143,59 @@ export default function Dashboard() {
           </section>
         </div>
 
-        <section className="flex flex-col justify-center items-center w-full max-h-80 mt-6">
+        <section className="flex flex-col justify-center items-center w-full h-80 mt-6">
           <Line options={config} data={lineData} />
         </section>
 
-        <section className="w-full mt-6">
-          <section className="flex flex-row gap-2 items-center justify-around">
+        <section className="flex flex-col items-center w-full mt-6">
+          <section className="flex flex-row gap-2 min-w-80 items-center justify-between mb-2">
             <h1 className="text-xl"> History </h1>
-            <button className="flex flex-row items-center gap-2 p-2 hover:bg-black rounded-md duration-300">
-              {" "}
-              Add weight <PlusCircledIcon height={25} width={25} />
-            </button>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <button
+                  variant="outline"
+                  className="flex flex-row items-center gap-2 p-2 hover:bg-black rounded-md duration-300"
+                >
+                  Add weight <PlusCircledIcon height={25} width={25} />
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Add weight</DialogTitle>
+                  <DialogDescription>
+                    Log your weight here. Click save when you're done.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <input
+                      id="name"
+                      defaultValue="Weight"
+                      className="col-span-3 border border-gray-300 rounded-xl px-4 py-2"
+                    />
+                  </div>
+                  <div className="grid grid-cols-4 items-center gap-4">
+                    <input
+                      id="username"
+                      defaultValue="Date"
+                      className="col-span-3 border border-gray-300 rounded-xl px-4 py-2"
+                    />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <button
+                    type="submit"
+                    className="hover:bg-neutral-500 p-2 rounded-md duration-300"
+                  >
+                    Save changes
+                  </button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           </section>
 
-          <section className="flex flex-col items-center gap-2 p-6 w-full h-80 border-2 border-neutral-500 rounded-md overflow-y-scroll overflow-x-hidden">
+          <section className="flex flex-col items-center gap-2 min-w-96 h-80 border-2 border-neutral-500 rounded-md overflow-y-scroll overflow-x-hidden">
             <HistoryCard date={"1 August, Sat"} weight={mockData[0]} />
             <HistoryCard date={"2 August, Sun"} weight={mockData[1]} />
             <HistoryCard date={"4 August, Sat"} weight={mockData[2]} />
