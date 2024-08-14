@@ -40,19 +40,18 @@ export default function Carousel() {
           className={`flex items-center justify-center border w-2 h-2 rounded-full border-white hover:bg-white duration-300 ${num == 0 ? "bg-white animate-bounce" : "bg-transparent"}`}
           onClick={() => setNum(0)}
         >
-          {" "}
         </button>
         <button
           className={`flex items-center justify-center border w-2 h-2 rounded-full border-white hover:bg-white duration-300 ${num == 1 ? "bg-white animate-bounce" : "bg-transparent"}`}
           onClick={() => setNum(1)}
         >
-          {" "}
+
         </button>
         <button
           className={`flex items-center justify-center border w-2 h-2 rounded-full border-white hover:bg-white duration-300 ${num == 2 ? "bg-white animate-bounce" : "bg-transparent"}`}
           onClick={() => setNum(2)}
         >
-          {" "}
+
         </button>
       </section>
     </div>
