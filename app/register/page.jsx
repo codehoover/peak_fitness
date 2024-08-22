@@ -24,7 +24,9 @@ export default function Register() {
   const [isVisible, setIsVisible] = useState(false);
   const router = useRouter();
   const [password, setPassword] = useState();
+  const [coachpassword, setCoachPasword] = useState();
   const [username, setUsername] = useState();
+  const [coachusername, setCoachUsername] = useState();
 
   return (
     <div className="flex flex-row items-center justify-center w-full h-screen bg-neutral-800 text-white ">
@@ -89,6 +91,8 @@ export default function Register() {
                 <input
                   className="bg-transparent outline-none placeholder-white w-full hover:-translate-y-2 duration-200"
                   placeholder="Username"
+                  value={coachusername}
+                  onChange={e => setCoachUsername(e.target.value)}
                 />
               </div>
 
@@ -97,6 +101,8 @@ export default function Register() {
                 <input
                   className="bg-transparent outline-none placeholder-white w-full hover:-translate-y-2 duration-200"
                   placeholder="Password"
+                  value={coachpassword}
+                  onChange={e => setCoachPasword(e.target.value)}
                   type={isVisible ? "text" : "password"}
                 />
                 <button onClick={() => setIsVisible(!isVisible)}>
@@ -127,6 +133,8 @@ export default function Register() {
                 <input
                   className="bg-transparent outline-none placeholder-white w-full hover:-translate-y-2 duration-200"
                   placeholder="Username"
+                  value={username}
+                  onChange={e => setUsername(e.target.value)}
                 />
               </div>
 
@@ -135,6 +143,8 @@ export default function Register() {
                 <input
                   className="bg-transparent outline-none placeholder-white w-full hover:-translate-y-2 duration-200"
                   placeholder="Password"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
                   type={isVisible ? "text" : "password"}
                 />
                 <button
