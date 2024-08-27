@@ -32,6 +32,23 @@
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8",
     "prettier": "3.3.3",
+    "prisma": "^5.18.0",
     "tailwindcss": "^3"
-  }
+  },
+  "description": "When you're ready, start your application by running:\r `docker compose up --build`.",
+  "main": "next.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codehoover/peak_fitness.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codehoover/peak_fitness/issues"
+  },
+  "homepage": "https://github.com/codehoover/peak_fitness#readme"
 }
