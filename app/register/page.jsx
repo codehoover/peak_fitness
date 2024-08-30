@@ -23,6 +23,10 @@ export default function Register() {
   const [toggle, setToggle] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const router = useRouter();
+  
+  //user data
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [username, setUsername] = useState();
 
@@ -111,6 +115,8 @@ export default function Register() {
                 <input
                   className="bg-transparent outline-none placeholder-white w-full hover:-translate-y-2 duration-200"
                   placeholder="Full Name"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
                 />
               </div>
 
@@ -119,6 +125,8 @@ export default function Register() {
                 <input
                   className="bg-transparent outline-none placeholder-white w-full hover:-translate-y-2 duration-200"
                   placeholder="Email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                 />
               </div>
 
@@ -127,6 +135,8 @@ export default function Register() {
                 <input
                   className="bg-transparent outline-none placeholder-white w-full hover:-translate-y-2 duration-200"
                   placeholder="Username"
+                  value={username}
+                  onChange={e => setUsername(e.target.value)}
                 />
               </div>
 
@@ -136,6 +146,8 @@ export default function Register() {
                   className="bg-transparent outline-none placeholder-white w-full hover:-translate-y-2 duration-200"
                   placeholder="Password"
                   type={isVisible ? "text" : "password"}
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
                 />
                 <button
                   onClick={() => setIsVisible(!isVisible)}
@@ -161,13 +173,13 @@ export default function Register() {
               onClick={() => router.push("/login")}
               className="flex flex-row w-full items-center justify-center gap-px font-semibold text-black"
             >
-              {" "}
-              <EnterIcon width={20} height={20} /> Log In{" "}
+
+              <EnterIcon width={20} height={20} /> Log In
             </Link>
           </section>
         </section>
 
-        <div className="hidden md:block flex items-center p-6 w-2/4 h-full bg-gradient-to-r from-black to-neutral-900 rounded-3xl">
+        <div className="hidden md:block items-center p-6 w-2/4 h-full bg-gradient-to-r from-black to-neutral-900 rounded-3xl">
           <Carousel />
         </div>
       </div>
