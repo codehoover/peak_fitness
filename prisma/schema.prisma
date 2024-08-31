@@ -8,13 +8,13 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
   name      String
-  pass      String   @unique
+  pass      String    @unique
   createdAt DateTime
-  role      UserType
-  username  String   @unique
+  role      UserType?
+  username  String    @unique
 }
 
 enum UserType {
