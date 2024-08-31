@@ -10,14 +10,16 @@ export async function POST(req) {
     // issue here
     //hashedPassword = await hash(password, 10);
 
-    // const newUser = await prisma.user.create({
-    //   data: { name, username, email, password },
-    // });
+    const user = await prisma.user.create({
+      data: { name, username, email, password: "tester123" },
+    });
 
-    return NextResponse.json(body);
-    // return NextResponse.json(
-    //   { user: newUser, message: "user created successfully" },
-    //   { status: 201 },
-    // );
-  } catch (error) {}
+    //return NextResponse.json(body);
+    return NextResponse.json(
+      { user, message: "user created successfully" },
+      { status: 201 },
+    );
+  } catch (error) {
+    return NextResponse.json({ error, message: "user creation unsuccessful" });
+  }
 }
