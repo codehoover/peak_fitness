@@ -28,7 +28,6 @@ export default function Home() {
               color="black"
               width={20}
               height={20}
-              hey
             />
 
             <QuestionMarkCircledIcon className="z-10" width={40} height={40} />

@@ -12,7 +12,8 @@ model User {
   email     String   @unique
   name      String
   pass      String   @unique
-  createdAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
   role      UserType
   username  String   @unique
 }

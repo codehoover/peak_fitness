@@ -38,8 +38,6 @@ ChartJS.register(
 );
 
 export default function Dashboard() {
-
-
   let sum = 0;
   const [mockData, setMockData] = useState([120, 121, 120, 122, 123, 121, 121]);
 
@@ -64,7 +62,7 @@ export default function Dashboard() {
         display: false,
         label: "Weight",
         borderColor: "rgb(249 115 22)",
-        backgroundColor: 'rgba(0,0,0,0.5)',
+        backgroundColor: "rgba(0,0,0,0.5)",
         pointRadius: 5,
       },
     ],
