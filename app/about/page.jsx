@@ -36,7 +36,6 @@ export default function About() {
         <section className="flex flex-col items-center text-center gap-6">
           <h1 className="text-4xl"> Donation based platform </h1>
           <p className="sm:w-3/6">
-            {" "}
             We strongly believe in providing equal access to all our users. I am
             committed to ensureing that every individual can access all features
             of our platform without any paywalls. Join us at Peak and unlock
@@ -53,22 +52,19 @@ export default function About() {
             <div className="flex flex-col w-48 h-48 p-2 border-orange-500 border rounded-md hover:scale-105 hover:font-semibold duration-300 ">
               <p> Routine Builder </p>
               <p className="text-xs">
-                {" "}
-                Tailored workouts and nutrition plans based on your goals{" "}
+                Tailored workouts and nutrition plans based on your goals
               </p>
             </div>
             <div className="w-48 h-48 p-2 border-orange-500 border rounded-md hover:scale-105 hover:font-semibold duration-300">
               <p> Communication hub </p>
               <p className="text-xs">
-                {" "}
-                Be able to communicate with friends or clients.{" "}
+                Be able to communicate with friends or clients.
               </p>
             </div>
             <div className="w-48 h-48 p-2 border-orange-500 border rounded-md hover:scale-105 hover:font-semibold duration-300">
               <p> Real-time tracking </p>
               <p className="text-xs">
-                {" "}
-                Monitor your progress from workout to workout.{" "}
+                Monitor your progress from workout to workout.
               </p>
             </div>
           </section>
@@ -78,11 +74,9 @@ export default function About() {
       <section>
         <div className="flex flex-col sm:items-center gap-2 p-6 sm:w-full">
           <h1 className="text-4xl">
-            {" "}
             Start your journey to becoming a better you now!
           </h1>
           <p className="text-gray-300">
-            {" "}
             Peak is available on Apples App store as well as the Google play
             store
           </p>
@@ -93,8 +87,7 @@ export default function About() {
       <section className="flex flex-col p-6 items-center">
         <h1 className="text-4xl font-bold text-orange-500"> Contact Us</h1>
         <p>
-          {" "}
-          Have questions or feedback? Fill out the form{" "}
+          Have questions or feedback? Fill out the form
           <Link className="text-orange-500 hover:underline" href="/contact">
             here
           </Link>
