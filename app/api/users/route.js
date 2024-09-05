@@ -4,6 +4,15 @@ import { hash } from "bcrypt";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
+  const data = {
+    email: "joe@aol.com",
+    name: "bassam",
+    pass: "tester123",
+    createdAt: new Date(Date.now()),
+    username: "bassamanator",
+    role: "CLIENT",
+  };
+
   try {
     const body = await req.json();
     const { name, username, email, pass, role } = body;
