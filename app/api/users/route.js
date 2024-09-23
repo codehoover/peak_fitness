@@ -1,6 +1,6 @@
 "use strict";
 import prisma from "@/lib/prisma";
-import { hash } from "bcrypt";
+import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -17,6 +17,14 @@ export async function POST(req) {
     const body = await req.json();
     const { name, username, email, pass, role } = body;
 
+    let hash;
+    try {
+      hash = await bcrypt.hash(pass, 10);
+      console.log("hash: ", hash);
+    } catch (error) {
+      console.log(error);
+    }
+
     //case where user cannot have the same username
     const exisitingUsername = await prisma.user.findUnique({
       where: { username: username },
@@ -30,15 +38,23 @@ export async function POST(req) {
       );
     }
 
-    const user = await prisma.user.create({
-      data: {
-        email,
-        name,
-        pass,
-        username,
-        role,
-      },
-    });
+    try {
+      const user = await prisma.user.create({
+        data: {
+          email,
+          name,
+          pass: String(hash),
+          username,
+          // role: "CLIENT",
+          role,
+          createdAt: new Date(Date.now()),
+        },
+      });
+      console.log("user: ", user);
+    } catch (error) {
+      console.log(error);
+    }
+
     return NextResponse.json(
       { user, message: "user created successfully" },
       { status: 201 },
