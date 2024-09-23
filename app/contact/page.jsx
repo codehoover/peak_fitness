@@ -1,3 +1,4 @@
+"use client";
 import {
   ClipboardIcon,
   EnvelopeClosedIcon,
@@ -6,8 +7,11 @@ import {
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 import Accordion from "../components/Accordion";
+import { useState } from "react";
 
 export default function Contact() {
+  const [role, setRole]= useState('');
+
   return (
     <div className="flex flex-col pt-28 bg-neutral-800 p-6 h-full text-white">
       <section className="flex flex-col text-left sm:text-center sm:items-center gap-2 mb-12">
@@ -48,30 +52,36 @@ export default function Contact() {
 
           <section className="flex flex-col justify-center gap-2">
             <button
-              className="flex flex-row gap-2 items-center text-sm w-full p-2 text-left border border-neutral-500 rounded-md hover:border-orange-500 focus:border-orange-500 duration-300"
+              className={role == 'COACH' 
+                ? "flex flex-row gap-2 text-sm w-full p-2 text-left border rounded-md border-orange-500 duration-300"
+                : "flex flex-row gap-2 text-sm w-full p-2 text-left border border-neutral-500 rounded-md hover:border-orange-500 duration-300"
+              }
               type="button"
+              onClick={()=>setRole('COACH')}
             >
               <ClipboardIcon width={30} height={30} />
 
               <section>
                 I am a Coach
                 <p className="text-neutral-300 text-xs">
-                  {" "}
-                  I use the platform for coaching{" "}
+                  I use the platform for coaching
                 </p>
               </section>
             </button>
 
             <button
-              className="flex flex-row gap-2 text-sm w-full p-2 text-left border border-neutral-500 rounded-md hover:border-orange-500 focus:border-orange-500 duration-300"
+              className={role == 'CLIENT' 
+                ? "flex flex-row gap-2 text-sm w-full p-2 text-left border rounded-md border-orange-500 duration-300"
+                : "flex flex-row gap-2 text-sm w-full p-2 text-left border border-neutral-500 rounded-md hover:border-orange-500 duration-300"
+              }
               type="button"
+              onClick={()=>setRole('CLIENT')}
             >
               <PersonIcon width={30} height={30} />
               <section>
                 I am a User/Client
                 <p className="text-neutral-300 text-xs">
-                  {" "}
-                  I use the platform personally/with a coach.{" "}
+                  I use the platform personally/with a coach.
                 </p>
               </section>
             </button>
@@ -94,9 +104,8 @@ export default function Contact() {
           <div>
             <h1 className="font-semibold"> Customer Support</h1>
             <p className="text-gray-300">
-              {" "}
               Our support team is available to address any concerns or queries
-              you may have.{" "}
+              you may have.
             </p>
           </div>
 

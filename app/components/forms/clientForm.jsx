@@ -87,6 +87,7 @@ export default function ClientForm(){
             aria-invalid={errors.username ? "true" : "false"}
           />
         </div>
+        {errors.username?.type === 'required' && <p role="alert" className="text-sm">This username already exists</p>}
 
         <div className="flex flex-row items-center gap-2 border-b-2">
           <LockClosedIcon width={25} height={25} />
